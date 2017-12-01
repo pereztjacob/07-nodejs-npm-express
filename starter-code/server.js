@@ -1,7 +1,10 @@
 'use strict';
 
 // TODO: Initialize your project using NPM to create and populate  package.json and package-lock.json files. Don't forget to add node_modules to your .gitignore!
+const express = require('express');
+const app = express();
 
+app.use( express.static('./public'));
 // TODO: Require the ExpressJS package that you installed via NPM, and instantiate the app.
 // Remember to install ExpressJS, and be sure that it's been added to your package.json as a dependency.
 // There is also a package here called body-parser, which is used by the provided POST route. Be sure to install that and save it as a dependency after you create your package.json.
