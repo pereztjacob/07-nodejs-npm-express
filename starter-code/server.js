@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 // TODO: Include all of the static resources as an argument to app.use().
 
 // COMMENT: Why are our files in a "public" directory now? How does ExpressJS serve files?
-// PUT YOUR RESPONSE HERE
+// ExpressJS serves files from within the directory passed into espress.static(). We wrap all files that will be sent to the client within this directory in order to pass it all into express.static().
 
 // TODO: Refactor to use arrow function
 app.post('/articles', bodyParser, function(request, response) {
