@@ -26,15 +26,18 @@ app.post('/articles', bodyParser, function(request, response) {
 });
 
 // TODO: Write a new route, using an arrow function, that will handle a request and send the new.html file back to the user
-app.get('/', (request, response) => {
+app.get('/new', (request, response) => {
     response.sendFile('./public/new.html', {root: '.'});
 });
 
 // TODO: Write a new route, using an arrow function, that will handle any other routes that were not defined and deliver a 404 status message to the user
-app.get('/', (request, response) => {
-    response.sendFile('404', {root: '.'});
+app.get('/home', (request, response) => {
+    response.sendFile('public/index.html', {root: '.'});
 });
 
+app.use(function (req, res, next) {
+    res.status(404).send('Error 404: NOT FOUND');
+});
 
 app.listen(PORT, () => {
     // TODO: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
