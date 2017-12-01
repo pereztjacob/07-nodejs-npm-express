@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 // ExpressJS serves files from within the directory passed into espress.static(). We wrap all files that will be sent to the client within this directory in order to pass it all into express.static().
 
 // TODO: Refactor to use arrow function
-app.post('/articles', bodyParser, function(request, response) {
+app.post('/articles', bodyParser, (request, response) => {
     // REVIEW: This route will receive a new article from the form page, new.html, and log that form data to the console. We will wire this up soon to actually write a record to our persistence layer!
     console.log(request.body);
     response.send('Record posted to server!!');
@@ -35,7 +35,7 @@ app.get('/home', (request, response) => {
     response.sendFile('public/index.html', {root: '.'});
 });
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     res.status(404).send('Error 404: NOT FOUND');
 });
 
